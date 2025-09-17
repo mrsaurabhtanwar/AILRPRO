@@ -270,7 +270,7 @@ if predict_button:
             display_cols = ["timestamp", "predicted_score", "category", "learner_profile"]
             display_data = student_history[display_cols].sort_values(by="timestamp", ascending=False).reset_index(drop=True)
 
-            st.dataframe(display_data, use_container_width=True)
+            st.dataframe(display_data, width='stretch')
 
     
     
@@ -298,7 +298,7 @@ if os.path.exists("prediction_log.csv"):
 
     # Display columns
     display_cols = ["student_id", "timestamp", "predicted_score", "category", "learner_profile"]
-    st.dataframe(filtered_data[display_cols].sort_values("timestamp", ascending=False), use_container_width=True)
+    st.dataframe(filtered_data[display_cols].sort_values("timestamp", ascending=False), width='stretch')
 
 else:
     st.info("No prediction history available yet.")
